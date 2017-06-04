@@ -10,7 +10,7 @@ var 雷区 = [
 ]
 
 var 行数 = 7
-var 列数 = 8
+var 列数 = 9
 var 雷数 = 1
 var 列数 = +(location.search.match(/(\?|&)x=(.*?)(&|$)/) || [])[2] || 列数
 
@@ -109,14 +109,14 @@ function 扫(行, 列) {
     var 雷数 = 周围有多少个地雷(行, 列)
     console.log(雷数)
     if (雷数 == 0) {
-        setTimeout(function() { 扫(行, 列 - 1) }, 1*50)
-        setTimeout(function() { 扫(行, 列 + 1) }, 2*50)
-        setTimeout(function() { 扫(行 - 1, 列) }, 3*50)
-        setTimeout(function() { 扫(行 + 1, 列) }, 4*50)
-        setTimeout(function() { 扫(行 - 1, 列 - 1) }, 5*50)
-        setTimeout(function() { 扫(行 - 1, 列 + 1) }, 6*50)
-        setTimeout(function() { 扫(行 + 1, 列 - 1) }, 7*50)
-        setTimeout(function() { 扫(行 + 1, 列 + 1) }, 8*50)
+        setTimeout(function() { 扫(行, 列 - 1) }, 1 * 50)
+        setTimeout(function() { 扫(行, 列 + 1) }, 2 * 50)
+        setTimeout(function() { 扫(行 - 1, 列) }, 3 * 50)
+        setTimeout(function() { 扫(行 + 1, 列) }, 4 * 50)
+        setTimeout(function() { 扫(行 - 1, 列 - 1) }, 5 * 50)
+        setTimeout(function() { 扫(行 - 1, 列 + 1) }, 6 * 50)
+        setTimeout(function() { 扫(行 + 1, 列 - 1) }, 7 * 50)
+        setTimeout(function() { 扫(行 + 1, 列 + 1) }, 8 * 50)
     }
 
     if (是否地雷(行, 列)) {
@@ -170,8 +170,8 @@ function 点击处理(e) {
 }
 
 function 初始化() {
-    行数 = 列数 * Math.round(window.innerHeight / window.innerWidth)
-    雷数 = parseInt(行数 * 列数 * (1 / 10))
+    行数 = Math.round(列数 * window.innerHeight / window.innerWidth)
+    雷数 = parseInt(行数 * 列数 * (1 / 11))
     已扫记录 = {}
     初始化雷区(行数, 列数, 雷数)
     更新视图()
