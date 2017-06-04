@@ -90,12 +90,16 @@ function 提示(信息) {
     typeof alert != 'undefined' && alert(信息)
 }
 
+var 是否游戏结束 = false;
+
 function 扫(行, 列) {
 
     已扫(行, 列)
     更新视图()
 
     if (是否地雷(行, 列)) {
+        是否游戏结束 = true
+
         for (var 行 = 0; 行 < 雷区.length; 行++) {
             var 此行 = 雷区[行]
             for (var 列 = 0; 列 < 此行.length; 列++) {
@@ -104,10 +108,6 @@ function 扫(行, 列) {
             }
         }
         更新视图()
-        setTimeout(function() {
-            提示('踩雷身亡！  游戏结束！  \n点击重新开始')
-            初始化()
-        }, 4000)
         return
     }
 
@@ -120,10 +120,17 @@ function 扫(行, 列) {
 }
 
 addEventListener('click', function(e) {
+    if (是否游戏结束 == true) {
+        是否游戏结束 = false
+        初始化()
+        return
+    }
+
     var td = e.target
     var r = td.getAttribute('r')
     var c = td.getAttribute('c')
     扫(r, c)
+
 })
 
 function 初始化() {
