@@ -10,6 +10,7 @@ var 雷区 = [
 var 行数 = 7
 var 列数 = 3
 var 雷数 = 1
+var 列数 = +(location.search.match(/(\?|&)x=(.*?)(&|$)/) || [])[2] || 列数
 
 function 初始化雷区(行数, 列数, 雷数) {
     雷区 = Array(行数);
