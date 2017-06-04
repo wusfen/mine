@@ -124,8 +124,8 @@ function 扫(行, 列) {
     }
 }
 
-'ontouchstart' in document ?
-    document.addEventListener('touchstart', 点击处理) : // 苹果手机
+navigator.userAgent.match(/mobile/i) ?
+    document.addEventListener('touchstart', 点击处理) :
     document.addEventListener('click', 点击处理)
 
 function 点击处理(e) {
