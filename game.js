@@ -7,8 +7,8 @@ var 雷区 = [
     [1, 0, 1, 0],
 ]
 
-var 行数 = 5
-var 列数 = 4
+var 行数 = 6
+var 列数 = 5
 var 雷数 = 1
 
 function 初始化雷区(行数, 列数, 雷数) {
@@ -117,7 +117,7 @@ addEventListener('click', function(e) {
 })
 
 function 初始化() {
-    雷数 = parseInt(行数 * 列数 * (1 / 6))
+    雷数 = parseInt(行数 * 列数 * (1 / 7))
     已扫记录 = {}
     初始化雷区(行数, 列数, 雷数)
     更新视图()
