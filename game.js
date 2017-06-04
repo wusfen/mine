@@ -8,7 +8,7 @@ var 雷区 = [
 ]
 
 var 行数 = 7
-var 列数 = 4
+var 列数 = 3
 var 雷数 = 1
 
 function 初始化雷区(行数, 列数, 雷数) {
@@ -143,6 +143,7 @@ function 点击处理(e) {
 }
 
 function 初始化() {
+    行数 = 列数 * Math.round(window.innerHeight / window.innerWidth)
     雷数 = parseInt(行数 * 列数 * (1 / 7))
     已扫记录 = {}
     初始化雷区(行数, 列数, 雷数)
