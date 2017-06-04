@@ -119,8 +119,9 @@ function 扫(行, 列) {
     }
 }
 
-document.body.addEventListener('click', 点击处理)
-document.body.addEventListener('touchstart', 点击处理) // 苹果手机
+'ontouchstart' in document ?
+    document.addEventListener('touchstart', 点击处理) : // 苹果手机
+    document.addEventListener('click', 点击处理)
 
 function 点击处理(e) {
     if (是否游戏结束 == true) {
