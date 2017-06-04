@@ -7,8 +7,8 @@ var 雷区 = [
     [1, 0, 1, 0],
 ]
 
-var 行数 = 6
-var 列数 = 5
+var 行数 = 7
+var 列数 = 4
 var 雷数 = 1
 
 function 初始化雷区(行数, 列数, 雷数) {
@@ -119,7 +119,10 @@ function 扫(行, 列) {
     }
 }
 
-addEventListener('click', function(e) {
+document.body.addEventListener('click', 点击处理)
+document.body.addEventListener('touchstart', 点击处理) // 苹果手机
+
+function 点击处理(e) {
     if (是否游戏结束 == true) {
         是否游戏结束 = false
         初始化()
@@ -127,11 +130,12 @@ addEventListener('click', function(e) {
     }
 
     var td = e.target
+    console.log(td)
     var r = td.getAttribute('r')
     var c = td.getAttribute('c')
     扫(r, c)
 
-})
+}
 
 function 初始化() {
     雷数 = parseInt(行数 * 列数 * (1 / 7))
