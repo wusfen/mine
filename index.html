@@ -71,8 +71,14 @@
         /*font-weight: bold;*/
         /*transition: .3s;*/
         z-index: 2;
+        border-width: 4px;
+        background: #400000;
+        border-color: #866060 #1D0000 #290A0A #9A6868;
+        /*background: #573931;*/
+        background: #471806;
+        border-color: #866060 #290A0A #290A0A #9A6868;
     }
-    
+
     .visibility {
         background: #fff;
         background: #ccc;
@@ -84,11 +90,13 @@
         right: -1px;
         bottom: -1px;
         z-index: 1;
+        background: transparent;
+        border-color: transparent;
     }
     
     .visibility.warn0 {
         color: #ccc;
-        color: #ddd;
+        color: transparent;
     }
     
     .visibility.warn1 {
@@ -107,6 +115,10 @@
     }
     
     .visibility.warn4 {
+        color: #DA00FF;
+    }
+    
+    .visibility.warn5 {
         color: #DA00FF;
     }
     
